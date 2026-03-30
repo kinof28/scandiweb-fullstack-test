@@ -1,8 +1,34 @@
 <?php
 
+// use Dotenv\Dotenv;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+
+// Load .env
+// $dotenv = Dotenv::createImmutable(dirname(__DIR__));
+// $dotenv->load();
+
+// // Load configs
+// $doctrineConfig = require dirname(__DIR__) . '/config/doctrine.php';
+// $appConfig = require dirname(__DIR__) . '/config/app.php';
+
+// // Build the EntityManager — this is the ONE call to the factory
+// $em = EntityManagerFactory::create($doctrineConfig);
+
+// // Pass $em down into your repositories
+// $userRepository = new UserRepository($em);
+
+// // Pass repositories into your services
+// $userService = new UserService($userRepository);
+
+// // Pass services into your controller
+// $controller = new GraphQLController($userService /*, other services */);
+
+
+
+
+$dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     // TODO: fix the public prefix before deployment
     $r->post('/public/graphql', [App\Controller\GraphQL::class, 'handle']);
     $r->get('/public/', [App\Controller\Test::class, 'test']);
