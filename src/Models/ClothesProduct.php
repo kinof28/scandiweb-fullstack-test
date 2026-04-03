@@ -5,10 +5,10 @@ namespace App\Models;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
-class SwatchAttributeSet extends AttributeSet
+class ClothesProduct extends Product
 {
     public function getType(): string
     {
-        return 'swatch';
+        return 'clothes';
     }
 }

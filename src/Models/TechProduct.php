@@ -5,10 +5,10 @@ namespace App\Models;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
-class TextAttributeSet extends AttributeSet
+class TechProduct extends Product
 {
   public function getType(): string
   {
-    return 'text';
+    return 'tech';
   }
 }
